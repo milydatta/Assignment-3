@@ -1,9 +1,14 @@
+//https://github.com/milydatta/Assignment-3
 // problem-1 (solve)
 //kilometerToMeter
 
 function kilometerToMeter(kilometer){
-    var meter = kilometer * 1000;
-    return meter;
+    if (kilometer < 0){
+        return "distance can't be negative";
+    }else{
+        meter = kilometer * 1000;
+        return meter;
+    }
 }
 var kilometer = kilometerToMeter(5);
 console.log(kilometer);
@@ -12,19 +17,22 @@ console.log(kilometer);
 // problem-2 (solve)
 // budgetCalculator
 
-function budgetCalculator(clock, mobile, laptop) {
-    var total = clock  + mobile  + laptop ;
-    return total;
-}
-var clockAmount = 5;
-var clockBudget = 250;
-var mobileAmount = 5;
-var mobileBudget = 500;
-var laptopAmount = 5;
-var laptopBudget = 2500;
-var myBudget = budgetCalculator(250 , 500 , 2500);
-console.log(myBudget);
+function budgetCalculator(watch, mobile, laptop) {
+   var eachWatch = 50;
+   var eachMobile = 100;
+   var eachLaptop = 500;
+  
+ if(watch < 0 || mobile < 0 || laptop < 0){
+   var output = "unexpected input";
+ }else{
+       var costWatch = eachWatch * watch;
+       var costMobile = eachMobile * mobile;
+       var costLaptop = eachLaptop * laptop;
 
+       var output = costWatch + costMobile + costLaptop;
+   }
+   return output;
+}
 
 // problem-3 (solve)
 // hotelCost
@@ -54,15 +62,15 @@ console.log(count);
 // problem-4 (solve)
 // megaFriend
 
-function megaFriend(friendsName){
-    var max = friendsName[0];
-    for (var i = 0; i < friendsName.length; i++);
-         var currentName = friendsName[i];
-         if(currentName > max){
-             max = currentName;
-         }
-     return megaFriend;   
-}
-var max = megaFriend["mina", "raj", "mithu"];
-console.log(max);
+var friendsName = ['mina', 'rajju', 'mitthu'];
+var long = 0;
+var max;
 
+for (var i = 0; i < friendsName.length; i++){
+    if (friendsName[i].length > long) {
+        var long = friendsName[i].length;
+        max = friendsName[i];
+    }
+}
+
+console.log(max);
